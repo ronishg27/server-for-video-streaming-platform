@@ -1,0 +1,16 @@
+{
+  "name": "backendprosetup",
+  "version": "1.0.0",
+  "description": "a backend project from chai aur code ep:6, professional setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "backend",
+    "chai"
+  ],
+  "author": "Ronish Ghimire",
+  "license": "ISC"
+}
