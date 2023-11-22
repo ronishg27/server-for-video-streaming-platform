@@ -8,5 +8,5 @@ backend project from chai aur code
 
 # to run the code
 in the main directory, run the following two commands
- - npm i
- - npm run dev
+ - ```npm i```
+ - ```npm run dev```
