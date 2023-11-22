@@ -16,3 +16,5 @@ class ApiError extends Error {
     else Error.captureStackTrace(this, this.constructor); // see documentation of node js api error
   }
 }
+
+export { ApiError };
