@@ -1,3 +1,5 @@
+import { asyncHandler } from "./asyncHandler";
+
 class ApiResponse {
   constructor(statusCode, data, message = "Success") {
     this.statusCode = statusCode;

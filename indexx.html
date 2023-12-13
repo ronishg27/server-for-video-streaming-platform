@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Form</title>
+</head>
+
+<body>
+
+    <form id="registrationForm">
+        <!-- Full Name Input -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+        <br>
+        <!-- Avatar Input -->
+        <label for="avatar">Avatar:</label>
+        <input type="file" id="avatar" name="avatar" accept="image/*" required>
+        <br>
+        <!-- Cover Image Input -->
+        <label for="coverImage">Cover Image:</label>
+        <input type="file" id="coverImage" name="coverImage" accept="image/*" multiple>
+        <br>
+        <!-- Username Input -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <!-- Password Input -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <!-- Email Input -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <!-- Submit Button -->
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('registrationForm');
+            const formData = new FormData(form);
+
+            fetch('http://localhost:8000/api/v1/users/register', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Handle success, e.g., redirect to another page
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Handle error, e.g., display an error message to the user
+                });
+        }
+    </script>
+
+</body>
+
+</html>
