@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Page</title>
+</head>
+
+<body>
+    <h1>Welcome to the Feed Page</h1>
+    <p>This is the content of your feed.</p>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        function logout() {
+            // You can use AJAX or other methods to call the logout API
+            // For example, using fetch:
+            fetch('http://localhost:8000/api/v1/users/logout', {
+                method: 'POST', // or 'GET' depending on your server setup
+                headers: {
+                    'Content-Type': 'application/json',
+                    // You may need to include authentication headers here
+                },
+                // Additional options if needed
+            })
+                .then(response => {
+                    // Handle the response accordingly
+                    if (response.ok) {
+                        // Redirect to the login page after successful logout
+                        window.location.href = 'login.html';
+                    } else {
+                        // Handle errors
+                        console.error('Logout failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error during logout:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>
