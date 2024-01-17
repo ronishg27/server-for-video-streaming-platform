@@ -1,4 +1,4 @@
-# Backend Learning
+# A Backend server for a video streaming platform
 
 backend project from chai aur code
 
